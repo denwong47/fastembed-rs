@@ -157,7 +157,7 @@ impl SparseTextEmbedding {
                     Array::from_shape_vec((batch_size, encoding_length), ids_array)?;
                 let owned_attention_mask =
                     Array::from_shape_vec((batch_size, encoding_length), mask_array)?;
-                let attention_mask_array = CowArray::from(&owned_attention_mask);
+                let attention_mask_array = CowArray::from(owned_attention_mask);
 
                 let token_type_ids_array =
                     Array::from_shape_vec((batch_size, encoding_length), typeids_array)?;
